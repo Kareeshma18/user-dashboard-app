@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f4f4f4;
+        }
+
+        .login-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1e3a5f;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #3a5f8f;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input:focus {
+            border-color: #1e3a5f;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #1e3a5f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #10416a;
+        }
+
+        .links {
+            margin-top: 15px;
+        }
+
+        .links a {
+            color: #1e3a5f;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h1>Login</h1>
+        <form method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <label for="username">Username</label>
+            <input type="text" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="links">
+            <a href="{% url 'signup' %}">Sign Up</a> | <a href="{% url 'forgot_password' %}">Forgot Password</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

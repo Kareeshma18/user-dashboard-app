@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signup-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1e3a5f;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #3a5f8f;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1e3a5f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #10416a;
+        }
+
+        .instructions {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .instructions ul {
+            list-style-type: disc; /* Adds bullet points */
+            padding-left: 20px; /* Indentation for bullets */
+        }
+
+        .instructions li {
+            margin-bottom: 5px;
+            color: #3a5f8f;
+        }
+
+        a {
+            color: #1e3a5f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-box">
+        <h1>Sign Up</h1>
+        <form method="POST">
+            <!-- CSRF Token: It will NOT be visible in the browser source code -->
+             <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+            <label for="username">Username:</label>
+            <input type="text" name="username" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required><br>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" name="confirm_password" required><br>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="instructions">
+            <p><strong>Password Instructions:</strong></p>
+            <ul>
+                <li>Password must be at least 8 characters long.</li>
+                <li>Password must contain at least one letter.</li>
+                <li>Password must contain at least one digit.</li>
+                <li>Password must contain at least one special character (e.g., @, $, !, %).</li>
+            </ul>
+        </div>
+
+        <a href="{% url 'login' %}">Already have an account? Log In</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
