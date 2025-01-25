@@ -1,4 +1,4 @@
-# user-dashboard-app
+
 # Django User Authentication and Dashboard Application
 
 ## Overview
