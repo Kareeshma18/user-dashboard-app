@@ -32,35 +32,6 @@ This is a Django-based application that provides user authentication functionali
 ### 7. **Logout**
 - Users can securely log out of the application.
 
-## Installation Instructions
-
-1. **Clone the Repository**:
-   ```bash
-   git clone <repository-link>
-   cd <repository-folder>
-   ```
-
-2. **Set Up a Virtual Environment**:
-   ```bash
-   python -m venv env
-   source env/bin/activate  # On Windows, use `env\Scripts\activate`
-   ```
-
-3. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Apply Migrations**:
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-   ```
-
-5. **Run the Development Server**:
-   ```bash
-   python manage.py runserver
-   ```
    Access the app at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 
