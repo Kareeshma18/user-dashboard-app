@@ -63,71 +63,12 @@ This is a Django-based application that provides user authentication functionali
    ```
    Access the app at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-## Directory Structure
 
-```
-DjangoApplication/
-├── user_auth/
-│   ├── migrations/
-│   ├── templates/
-│   │   ├── user_auth/
-│   │   │   ├── login.html
-│   │   │   ├── signup.html
-│   │   │   ├── forgot_password.html
-│   │   │   ├── change_password.html
-│   │   │   ├── dashboard.html
-│   │   │   ├── profile.html
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── models.py
-│   ├── tests.py
-│   ├── urls.py
-│   ├── views.py
-├── DjangoApplication/
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   ├── wsgi.py
-├── db.sqlite3
-├── manage.py
-├── requirements.txt
-```
 
-## Implementation Details
-
-### Models
-- The `CustomUser` model extends the default `AbstractUser` to include additional fields like `joined` and `last_updated`.
-
-### Forms
-- `CustomUserCreationForm` validates unique email addresses and ensures proper password confirmation.
-
-### Views
-- Login, Signup, and Dashboard views handle user authentication and data display.
-- The `dashboard` view fetches `joined` and `last_updated` dates to display on the dashboard.
-
-### Templates
-- Custom templates are used for each page. Each template extends a base layout to ensure consistency.
 
 ## Validation and Error Handling
 - **Email Validation**: Prevents duplicate email addresses during signup.
 - **Password Requirements**: Ensures passwords are at least 8 characters long.
 - **Authentication Protection**: Restricts access to authenticated pages like the dashboard and profile.
 
-## Notes
-- Make sure to configure email settings in `settings.py` to enable password reset functionality.
-- The application uses SQLite as the default database. You can switch to another database by updating the `DATABASES` configuration in `settings.py`.
 
-## Video Demonstration
-Record a video demonstrating the following:
-1. Signup with a unique email.
-2. Login with the registered account.
-3. Access the dashboard to view user details.
-4. Test the validation for duplicate email addresses during signup.
-5. Change the password and log back in with the new credentials.
-6. Logout functionality.
-
-## Contact
-If you encounter issues or have questions, feel free to raise them in the repository's issue tracker.
